@@ -72,8 +72,17 @@ service or the older broad development dependency inventory as vulnerability-fre
 
 No live-provider authentication, paid API calls, embeddings, voice-provider run,
 Windows execution or full browser-to-provider study session was completed. Local
-Chromium launch was blocked by the cloud execution environment; browser scripts
-must be run in a supported environment before calling that layer verified.
+Chromium launch was blocked by the cloud execution environment. The same
+simulator browser script subsequently passed on GitHub Actions: desktop and
+390px mobile preset-deck play, reports, reflection/replay, and persistence after
+reload, with provider/StorySage requests blocked.
+
+CI evidence: https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281
+
+This is functional browser coverage, not a pixel-perfect visual audit. Screenshot
+inspection found a narrow mobile run-report banner/list overlap. Full cockpit
+browser-to-provider study behavior remains unverified. The new README desktop
+report screenshot comes from synthetic CI data, not a participant or live model.
 
 No hosted demo is deployed. Existing deployment examples still require real
 origins, secrets and storage configuration; missing production URL checks should

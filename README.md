@@ -8,6 +8,8 @@
 
 Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
+[![Build and regression checks](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml/badge.svg)](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml)
+
 [Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Quick start](#quick-start) · [Architecture](#system-architecture) · [Release notes](docs/RELEASE_NOTES.md)
 
 **Tell your story. Inspect the model. Revisit a decision.**
@@ -36,8 +38,8 @@ are tentative behavioral signals, not ground truth about motivations.
 
 > **Public source release, not a hosted production service.** All three applications
 > and the optional graph service are included. Startup fixes, local builds and
-> offline checks are verified; live-provider and full browser end-to-end behavior
-> are not. The legacy frontend still has known build-tool advisories. Read
+> offline checks are verified, including simulator browser flows in CI;
+> the full study-to-provider end-to-end experience is not verified. The legacy frontend still has known build-tool advisories. Read
 > [Verification & limitations](#verification--limitations) before running or deploying.
 
 ## Explore the experience
@@ -51,6 +53,12 @@ are tentative behavioral signals, not ground truth about motivations.
 4. **Reflect, then replay.** Review the first run through the assigned condition
    and compare a second run. Similarity scores describe the implemented comparison,
    not scientific accuracy or a correct answer.
+
+### Inside the simulator
+
+![Actual campus-simulation run report showing synthetic choices, outcomes and resource changes](images/simulation-run-report.png)
+
+*Actual desktop screenshot from the [successful Chromium regression run](https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281), using synthetic test data and the preset deck. No participant data or live model response is shown.*
 
 ### Research conditions
 
@@ -175,14 +183,14 @@ see the [release notes](docs/RELEASE_NOTES.md) and [deployment notes](deploy/REA
 
 ## Verification & limitations
 
-Checks recorded on **2026-10-20**. No real provider credentials, paid model calls,
+Checks recorded on **2026-10-20**. [All three CI jobs passed](https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281). No real provider credentials, paid model calls,
 or participant data were used.
 
 | Area | Verified | Boundary |
 | :--- | :--- | :--- |
 | Backend | Import, database setup, actual server HTTP health, 76 unit tests (including real register/login) and 227 mock integration smoke checks | Live models, embeddings, voice-provider and full study E2E not tested |
 | Web cockpit | Production build, lint, UI contract checks, 13 auth cases and 19 interview-gate/count cases | Browser execution blocked by the test environment; two pre-existing hook warnings remain |
-| Simulation | Production build, session/bridge/grounding checks, mocked four-provider credential transport and six full local API game runs | Browser smoke prepared, not passed; live Scenario Studio generation not tested |
+| Simulation | Production build, session/bridge/grounding checks, mocked four-provider credential transport, six full API game runs, and real desktop/mobile Chromium flows in CI | Live Scenario Studio generation and integrated study E2E not tested |
 | npm dependencies | Simulator: **0** advisories. Cockpit runtime-only: **0** | Full cockpit toolchain: **7** advisories, including **5 high**; no Tailwind major migration |
 | Backend runtime dependencies | Pinned tested runtime: **0 known** pip-audit findings | Not an audit of all optional services or historical development dependencies |
 
@@ -229,9 +237,11 @@ npm run smoke:generator-auth
 npm run smoke:standalone-api
 ```
 
-A supported Chromium environment can additionally run
-`npm run smoke:standalone-browser` against the local running simulator.
-Providing a test script is not evidence that its browser run passed.
+The desktop/mobile preset-deck browser check passed in GitHub Actions. To
+reproduce it in a supported Chromium environment, run
+`npm run smoke:standalone-browser` against the local running simulator. This
+functional smoke is not an exhaustive visual audit; a narrow mobile run-report
+banner/list overlap remains noted in the release notes.
 
 </details>
 
