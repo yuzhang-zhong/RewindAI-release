@@ -4,15 +4,17 @@
 
 ### Inspectable and Revisable Autobiographical Clones<br>for Reflective Social Decisions
 
+**Tell your story. Inspect the model. Revisit a decision.**
+
 **Accepted to the UIST 2026 Poster Track**
 
 Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 [![Build and regression checks](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml/badge.svg)](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml)
 
-[Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Quick start](#quick-start) · [Architecture](#system-architecture) · [Release notes](docs/RELEASE_NOTES.md)
+[Download source](https://github.com/yuzhang-zhong/RewindAI-release/archive/refs/heads/main.zip) · [Quick start](#quick-start) · [Experience](#explore-the-experience) · [Architecture](#system-architecture) · [Documentation](#documentation)
 
-**Tell your story. Inspect the model. Revisit a decision.**
+[Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Release notes](docs/RELEASE_NOTES.md) · [Verification & limitations](#verification--limitations)
 
 </div>
 
@@ -41,6 +43,14 @@ are tentative behavioral signals, not ground truth about motivations.
 > offline checks are verified, including simulator browser flows in CI;
 > the full study-to-provider end-to-end experience is not verified. The legacy frontend still has known build-tool advisories. Read
 > [Verification & limitations](#verification--limitations) before running or deploying.
+
+### Choose your path
+
+| I want to… | Start here | What I need |
+| :--- | :--- | :--- |
+| Try the preset campus deck and reflect on a run | [Standalone simulation](#1-try-the-campus-simulation-without-a-model-key) | Node.js 22.12+ and npm; no model key |
+| Explore interviews, editable representations and reflection | [Complete local stack](#2-run-the-complete-local-stack) | Node.js 22.12+, npm, Python 3.12 and your own provider configuration |
+| Review the research flow and release boundaries | [Research conditions](#research-conditions) · [Verification](#verification--limitations) | No installation |
 
 ## Explore the experience
 
@@ -87,6 +97,23 @@ graph extraction and model formulation into focused agents. The graph service
 is optional; the default configuration below disables external graph sync.
 
 ## Quick start
+
+### Get the source
+
+This repository provides a **research source snapshot**, not a packaged desktop
+or mobile application. No application installer or hosted demo is provided.
+
+Clone the repository:
+
+```bash
+git clone --depth 1 https://github.com/yuzhang-zhong/RewindAI-release.git
+cd RewindAI-release
+```
+
+Or [download the source ZIP](https://github.com/yuzhang-zhong/RewindAI-release/archive/refs/heads/main.zip)
+and extract it. The extracted `RewindAI-release-main` directory is the repository
+root for the commands below. Choose the standalone simulation or the full stack;
+the standalone path does not require setting up the backend or web cockpit.
 
 ### 1. Try the campus simulation without a model key
 
@@ -257,6 +284,15 @@ banner/list overlap remains noted in the release notes.
   behavior is unchanged. [Details](docs/RELEASE_NOTES.md#authentication-repair).
 - The original public repository is preserved unchanged. This release contains
   the full public-source components with clearly documented repairs and limits.
+
+## Documentation
+
+| Guide | What it covers |
+| :--- | :--- |
+| [Component guides](#system-architecture) | Backend, web cockpit, simulation and optional graph-service setup |
+| [Release notes](docs/RELEASE_NOTES.md) | Startup and authentication repairs, provider credential transport, dependency findings and verification boundaries |
+| [Deployment notes](deploy/README.md) | Placeholder hosting templates; real origins, secrets and storage configuration are still required |
+| [Attribution and rights](NOTICE.md) | Source provenance, upstream credits and the absence of a repository-level license grant |
 
 ## Acknowledgments & provenance
 
