@@ -4,23 +4,19 @@
 
 ### Inspectable and Revisable Autobiographical Clones<br>for Reflective Social Decisions
 
-**Tell your story. Inspect the model. Revisit a decision.**
-
-**Accepted to the UIST 2026 Poster Track**
-
+**Accepted to the UIST 2026 Poster Track**  
 Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 [![Build and regression checks](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml/badge.svg)](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml)
 
-[Download source](https://github.com/yuzhang-zhong/RewindAI-release/archive/refs/heads/main.zip) · [Quick start](#quick-start) · [Experience](#explore-the-experience) · [Architecture](#system-architecture) · [Documentation](#documentation)
-
-[Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Release notes](docs/RELEASE_NOTES.md) · [Verification & limitations](#verification--limitations)
+[Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Quick start](#quick-start) · [Experience](#explore-the-experience) · [Documentation](#documentation)
 
 </div>
 
-![RewindAI agent-grounded graph framework: stories and traces become inspectable models and a reflection loop](images/rewindai_agent_graph_framework_compact.png)
+<a id="inside-the-simulator"></a>
+![Actual campus-simulation run report showing synthetic choices, outcomes and resource changes](images/simulation-run-report.png)
 
-<p align="center"><em>Research framework, not a screenshot or a claim of validated prediction accuracy.</em></p>
+*Actual desktop screenshot from the [successful Chromium regression run](https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281), using synthetic test data and the preset deck. No participant data or live model response is shown.*
 
 ## What is RewindAI?
 
@@ -64,12 +60,6 @@ are tentative behavioral signals, not ground truth about motivations.
    and compare a second run. Similarity scores describe the implemented comparison,
    not scientific accuracy or a correct answer.
 
-### Inside the simulator
-
-![Actual campus-simulation run report showing synthetic choices, outcomes and resource changes](images/simulation-run-report.png)
-
-*Actual desktop screenshot from the [successful Chromium regression run](https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281), using synthetic test data and the preset deck. No participant data or live model response is shown.*
-
 ### Research conditions
 
 These are implemented study flows, **not reported study results**.
@@ -95,6 +85,15 @@ These are implemented study flows, **not reported study results**.
 The backend separates interview, session memory, planning, biography writing,
 graph extraction and model formulation into focused agents. The graph service
 is optional; the default configuration below disables external graph sync.
+
+<details>
+<summary>Interview-to-reflection research framework</summary>
+
+![RewindAI agent-grounded graph framework: stories and traces become inspectable models and a reflection loop](images/rewindai_agent_graph_framework_compact.png)
+
+Research framework, not a screenshot or a claim of validated prediction accuracy.
+
+</details>
 
 ## Quick start
 
