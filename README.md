@@ -31,10 +31,6 @@ The clone is a **revisable hypothesis**, not an authoritative judgment about a
 person. Interview evidence supplies autobiographical context; simulation traces
 are tentative behavioral signals, not ground truth about motivations.
 
-| Inspect | Revise | Reflect & replay |
-| :--- | :--- | :--- |
-| Review the stories, relationships and trade-offs behind a representation. | Edit biography content and revisit model hypotheses instead of accepting a fixed portrait. | Compare decisions on a shared campus deck, with self-reflection, generic AI or clone-style support. |
-
 > **Public source release, not a hosted production service.** All three applications
 > and the optional graph service are included. Startup fixes, local builds and
 > offline checks are verified, including simulator browser flows in CI;
@@ -71,30 +67,6 @@ These are implemented study flows, **not reported study results**.
 | **Generic AI** · `contrast` / Group 2 | Run 1 → AI reflection using the game report → Run 2 |
 | **RewindAI clone** · `experiment` / Group 3 | Interview → biography / graph / model → Run 1 → clone reflection → Run 2 |
 | **Open experience** · `anonymous` | Product flow without research step labels; no-retention behavior depends on the study handoff |
-
-## System architecture
-
-![Full RewindAI architecture: cockpit, autobiographical grounding, simulation, reflection and study summaries](images/rewindai_framework_architecture_designed.png)
-
-| Application | What lives here | Start here |
-| :--- | :--- | :--- |
-| **StorySage** | Interview agents, biography, graph/model generation, reflection, trace ingestion, persistence and admin APIs | [Backend](StorySage/readme.md) |
-| **StorySage Frontend** | RewindAI cockpit, account flow, interview, biography/graph/model views and admin dashboard | [Web cockpit](StorySage_Frontend/README.md) |
-| **Rewind-reigns** | Campus simulation, bilingual deck, run reports, Scenario Studio and reflection/replay interfaces | [Simulation](Rewind-reigns/README.md) |
-| **Graph compatibility service** · optional | Backend-only graph/report integration | [Graph service](rewindai-mirofish-backend/README.md) |
-
-The backend separates interview, session memory, planning, biography writing,
-graph extraction and model formulation into focused agents. The graph service
-is optional; the default configuration below disables external graph sync.
-
-<details>
-<summary>Interview-to-reflection research framework</summary>
-
-![RewindAI agent-grounded graph framework: stories and traces become inspectable models and a reflection loop](images/rewindai_agent_graph_framework_compact.png)
-
-Research framework, not a screenshot or a claim of validated prediction accuracy.
-
-</details>
 
 ## Quick start
 
@@ -141,6 +113,9 @@ may incur costs. Do not enter keys into an untrusted hosted copy.
 Also requires **Python 3.12** and your own backend provider configuration for
 model-backed features. This source release does not bundle keys, a live demo,
 study participants, or a configured hosting account.
+
+<details>
+<summary>Environment files and three local services</summary>
 
 Create an untracked `StorySage/.env` locally:
 
@@ -207,6 +182,32 @@ original broader `requirements.txt` is retained for provenance, not recommended
 as the audited quick-start dependency set. Other platforms may need a compatible
 resolution. For Vertex credentials, graph integration and deployment templates,
 see the [release notes](docs/RELEASE_NOTES.md) and [deployment notes](deploy/README.md).
+
+</details>
+
+## System architecture
+
+![Full RewindAI architecture: cockpit, autobiographical grounding, simulation, reflection and study summaries](images/rewindai_framework_architecture_designed.png)
+
+| Application | What lives here | Start here |
+| :--- | :--- | :--- |
+| **StorySage** | Interview agents, biography, graph/model generation, reflection, trace ingestion, persistence and admin APIs | [Backend](StorySage/readme.md) |
+| **StorySage Frontend** | RewindAI cockpit, account flow, interview, biography/graph/model views and admin dashboard | [Web cockpit](StorySage_Frontend/README.md) |
+| **Rewind-reigns** | Campus simulation, bilingual deck, run reports, Scenario Studio and reflection/replay interfaces | [Simulation](Rewind-reigns/README.md) |
+| **Graph compatibility service** · optional | Backend-only graph/report integration | [Graph service](rewindai-mirofish-backend/README.md) |
+
+The backend separates interview, session memory, planning, biography writing,
+graph extraction and model formulation into focused agents. The graph service
+is optional; the default configuration in [Quick start](#quick-start) disables external graph sync.
+
+<details>
+<summary>Interview-to-reflection research framework</summary>
+
+![RewindAI agent-grounded graph framework: stories and traces become inspectable models and a reflection loop](images/rewindai_agent_graph_framework_compact.png)
+
+Research framework, not a screenshot or a claim of validated prediction accuracy.
+
+</details>
 
 ## Verification & limitations
 
