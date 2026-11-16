@@ -2,6 +2,8 @@
 
 # RewindAI
 
+**English** · [简体中文](README.zh-CN.md)
+
 <a id="inspectable-and-revisable-autobiographical-clonesfor-reflective-social-decisions"></a>
 **Inspectable and Revisable Autobiographical Clones for Reflective Social Decisions**
 
