@@ -2,7 +2,8 @@
 
 # RewindAI
 
-### Inspectable and Revisable Autobiographical Clones<br>for Reflective Social Decisions
+<a id="inspectable-and-revisable-autobiographical-clonesfor-reflective-social-decisions"></a>
+**Inspectable and Revisable Autobiographical Clones for Reflective Social Decisions**
 
 **Accepted to the UIST 2026 Poster Track**  
 Yuzhang Zhong · Min Kim · Rangjiacheng Lu
