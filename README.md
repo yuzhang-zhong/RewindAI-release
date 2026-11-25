@@ -2,23 +2,24 @@
 
 # RewindAI
 
-### Inspectable and Revisable Autobiographical Clones<br>for Reflective Social Decisions
+**English** · [简体中文](README.zh-CN.md)
 
-**Accepted to the UIST 2026 Poster Track**
+<a id="inspectable-and-revisable-autobiographical-clonesfor-reflective-social-decisions"></a>
+**Inspectable and Revisable Autobiographical Clones for Reflective Social Decisions**
 
+**Accepted to the UIST 2026 Poster Track**  
 Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 [![Build and regression checks](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml/badge.svg)](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml)
 
-[Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Quick start](#quick-start) · [Architecture](#system-architecture) · [Release notes](docs/RELEASE_NOTES.md)
-
-**Tell your story. Inspect the model. Revisit a decision.**
+[Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Quick start](#quick-start) · [Experience](#explore-the-experience) · [Documentation](#documentation)
 
 </div>
 
-![RewindAI agent-grounded graph framework: stories and traces become inspectable models and a reflection loop](images/rewindai_agent_graph_framework_compact.png)
+<a id="inside-the-simulator"></a>
+![Actual campus-simulation run report showing synthetic choices, outcomes and resource changes](images/simulation-run-report.png)
 
-<p align="center"><em>Research framework, not a screenshot or a claim of validated prediction accuracy.</em></p>
+*Actual desktop screenshot from the [successful Chromium regression run](https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281), using synthetic test data and the preset deck. No participant data or live model response is shown.*
 
 ## What is RewindAI?
 
@@ -32,15 +33,19 @@ The clone is a **revisable hypothesis**, not an authoritative judgment about a
 person. Interview evidence supplies autobiographical context; simulation traces
 are tentative behavioral signals, not ground truth about motivations.
 
-| Inspect | Revise | Reflect & replay |
-| :--- | :--- | :--- |
-| Review the stories, relationships and trade-offs behind a representation. | Edit biography content and revisit model hypotheses instead of accepting a fixed portrait. | Compare decisions on a shared campus deck, with self-reflection, generic AI or clone-style support. |
-
 > **Public source release, not a hosted production service.** All three applications
 > and the optional graph service are included. Startup fixes, local builds and
 > offline checks are verified, including simulator browser flows in CI;
 > the full study-to-provider end-to-end experience is not verified. The legacy frontend still has known build-tool advisories. Read
 > [Verification & limitations](#verification--limitations) before running or deploying.
+
+### Choose your path
+
+| I want to… | Start here | What I need |
+| :--- | :--- | :--- |
+| Try the preset campus deck and reflect on a run | [Standalone simulation](#1-try-the-campus-simulation-without-a-model-key) | Node.js 22.12+ and npm; no model key |
+| Explore interviews, editable representations and reflection | [Complete local stack](#2-run-the-complete-local-stack) | Node.js 22.12+, npm, Python 3.12 and your own provider configuration |
+| Review the research flow and release boundaries | [Research conditions](#research-conditions) · [Verification](#verification--limitations) | No installation |
 
 ## Explore the experience
 
@@ -54,12 +59,6 @@ are tentative behavioral signals, not ground truth about motivations.
    and compare a second run. Similarity scores describe the implemented comparison,
    not scientific accuracy or a correct answer.
 
-### Inside the simulator
-
-![Actual campus-simulation run report showing synthetic choices, outcomes and resource changes](images/simulation-run-report.png)
-
-*Actual desktop screenshot from the [successful Chromium regression run](https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281), using synthetic test data and the preset deck. No participant data or live model response is shown.*
-
 ### Research conditions
 
 These are implemented study flows, **not reported study results**.
@@ -71,46 +70,24 @@ These are implemented study flows, **not reported study results**.
 | **RewindAI clone** · `experiment` / Group 3 | Interview → biography / graph / model → Run 1 → clone reflection → Run 2 |
 | **Open experience** · `anonymous` | Product flow without research step labels; no-retention behavior depends on the study handoff |
 
-## System architecture
-
-![Full RewindAI architecture: cockpit, autobiographical grounding, simulation, reflection and study summaries](images/rewindai_framework_architecture_designed.png)
-
-| Application | What lives here | Start here |
-| :--- | :--- | :--- |
-| **StorySage** | Interview agents, biography, graph/model generation, reflection, trace ingestion, persistence and admin APIs | [Backend](StorySage/readme.md) |
-| **StorySage Frontend** | RewindAI cockpit, account flow, interview, biography/graph/model views and admin dashboard | [Web cockpit](StorySage_Frontend/README.md) |
-| **Rewind-reigns** | Campus simulation, bilingual deck, run reports, Scenario Studio and reflection/replay interfaces | [Simulation](Rewind-reigns/README.md) |
-| **Graph compatibility service** · optional | Backend-only graph/report integration | [Graph service](rewindai-mirofish-backend/README.md) |
-
-The backend separates interview, session memory, planning, biography writing,
-graph extraction and model formulation into focused agents. The graph service
-is optional; the default configuration below disables external graph sync.
-
-## Repository map
-
-If you are new to the codebase, use this as the reading order:
-
-| Path | Responsibility | Good starting point |
-| :--- | :--- | :--- |
-| `StorySage/` | Interview backend, biography generation, graph and mental-model pipeline, storage and admin APIs | [Backend README](StorySage/readme.md) |
-| `StorySage_Frontend/` | Participant cockpit, login/registration, interview flow, biography editing and dashboard | [Frontend README](StorySage_Frontend/README.md) |
-| `Rewind-reigns/` | Campus simulation, scenario deck, run report and reflection/replay UI | [Simulation README](Rewind-reigns/README.md) |
-| `rewindai-mirofish-backend/` | Optional graph compatibility service for external graph/report integration | [Graph service README](rewindai-mirofish-backend/README.md) |
-| `docs/` + `deploy/` | Release notes, deployment notes and operational boundaries | [Docs index](docs/README.md) |
-
-In practice, the typical workflow is:
-
-1. A participant creates an account in the web cockpit.
-2. The backend collects interview evidence in `StorySage`.
-3. Biography, graph and mental-model outputs are surfaced back in the frontend.
-4. The simulator runs a decision scenario and records traces.
-5. Reflection and replay compare the first and second run in the same study flow.
-
-This keeps the product architecture clear: the frontend is a UI shell, the
-backend owns the reasoning and evidence pipeline, and the simulator is the
-decision environment that produces comparable traces.
-
 ## Quick start
+
+### Get the source
+
+This repository provides a **research source snapshot**, not a packaged desktop
+or mobile application. No application installer or hosted demo is provided.
+
+Clone the repository:
+
+```bash
+git clone --depth 1 https://github.com/yuzhang-zhong/RewindAI-release.git
+cd RewindAI-release
+```
+
+Or [download the source ZIP](https://github.com/yuzhang-zhong/RewindAI-release/archive/refs/heads/main.zip)
+and extract it. The extracted `RewindAI-release-main` directory is the repository
+root for the commands below. Choose the standalone simulation or the full stack;
+the standalone path does not require setting up the backend or web cockpit.
 
 ### 1. Try the campus simulation without a model key
 
@@ -138,6 +115,9 @@ may incur costs. Do not enter keys into an untrusted hosted copy.
 Also requires **Python 3.12** and your own backend provider configuration for
 model-backed features. This source release does not bundle keys, a live demo,
 study participants, or a configured hosting account.
+
+<details>
+<summary>Environment files and three local services</summary>
 
 Create an untracked `StorySage/.env` locally:
 
@@ -204,6 +184,56 @@ original broader `requirements.txt` is retained for provenance, not recommended
 as the audited quick-start dependency set. Other platforms may need a compatible
 resolution. For Vertex credentials, graph integration and deployment templates,
 see the [release notes](docs/RELEASE_NOTES.md) and [deployment notes](deploy/README.md).
+
+</details>
+
+## System architecture
+
+![Full RewindAI architecture: cockpit, autobiographical grounding, simulation, reflection and study summaries](images/rewindai_framework_architecture_designed.png)
+
+| Application | What lives here | Start here |
+| :--- | :--- | :--- |
+| **StorySage** | Interview agents, biography, graph/model generation, reflection, trace ingestion, persistence and admin APIs | [Backend](StorySage/readme.md) |
+| **StorySage Frontend** | RewindAI cockpit, account flow, interview, biography/graph/model views and admin dashboard | [Web cockpit](StorySage_Frontend/README.md) |
+| **Rewind-reigns** | Campus simulation, bilingual deck, run reports, Scenario Studio and reflection/replay interfaces | [Simulation](Rewind-reigns/README.md) |
+| **Graph compatibility service** · optional | Backend-only graph/report integration | [Graph service](rewindai-mirofish-backend/README.md) |
+
+The backend separates interview, session memory, planning, biography writing,
+graph extraction and model formulation into focused agents. The graph service
+is optional; the default configuration in [Quick start](#quick-start) disables external graph sync.
+
+<details>
+<summary>Interview-to-reflection research framework</summary>
+
+![RewindAI agent-grounded graph framework: stories and traces become inspectable models and a reflection loop](images/rewindai_agent_graph_framework_compact.png)
+
+Research framework, not a screenshot or a claim of validated prediction accuracy.
+
+</details>
+
+## Repository map
+
+If you are new to the codebase, use this as the reading order:
+
+| Path | Responsibility | Good starting point |
+| :--- | :--- | :--- |
+| `StorySage/` | Interview backend, biography generation, graph and mental-model pipeline, storage and admin APIs | [Backend README](StorySage/readme.md) |
+| `StorySage_Frontend/` | Participant cockpit, login/registration, interview flow, biography editing and dashboard | [Frontend README](StorySage_Frontend/README.md) |
+| `Rewind-reigns/` | Campus simulation, scenario deck, run report and reflection/replay UI | [Simulation README](Rewind-reigns/README.md) |
+| `rewindai-mirofish-backend/` | Optional graph compatibility service for external graph/report integration | [Graph service README](rewindai-mirofish-backend/README.md) |
+| `docs/` + `deploy/` | Release notes, deployment notes and operational boundaries | [Docs index](docs/README.md) |
+
+In practice, the typical workflow is:
+
+1. A participant creates an account in the web cockpit.
+2. The backend collects interview evidence in `StorySage`.
+3. Biography, graph and mental-model outputs are surfaced back in the frontend.
+4. The simulator runs a decision scenario and records traces.
+5. Reflection and replay compare the first and second run in the same study flow.
+
+This keeps the product architecture clear: the frontend is a UI shell, the
+backend owns the reasoning and evidence pipeline, and the simulator is the
+decision environment that produces comparable traces.
 
 ## Verification & limitations
 
@@ -281,6 +311,15 @@ banner/list overlap remains noted in the release notes.
   behavior is unchanged. [Details](docs/RELEASE_NOTES.md#authentication-repair).
 - The original public repository is preserved unchanged. This release contains
   the full public-source components with clearly documented repairs and limits.
+
+## Documentation
+
+| Guide | What it covers |
+| :--- | :--- |
+| [Component guides](#system-architecture) | Backend, web cockpit, simulation and optional graph-service setup |
+| [Release notes](docs/RELEASE_NOTES.md) | Startup and authentication repairs, provider credential transport, dependency findings and verification boundaries |
+| [Deployment notes](deploy/README.md) | Placeholder hosting templates; real origins, secrets and storage configuration are still required |
+| [Attribution and rights](NOTICE.md) | Source provenance, upstream credits and the absence of a repository-level license grant |
 
 ## Acknowledgments & provenance
 
