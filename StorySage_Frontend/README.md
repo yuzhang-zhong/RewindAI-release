@@ -2,16 +2,38 @@
 
 Main participant-facing web cockpit and admin dashboard.
 
-## What It Does
+## What it does
 
-- User registration, login, and group assignment.
-- Natural interview entry.
-- Biography, graph, and mental-model viewing.
-- simulation-test launch and account handoff.
-- Self, generic AI, and clone-style reflection flows.
-- Privacy-bounded admin dashboard.
+The web cockpit is the participant-facing interface for the RewindAI research
+flow. It handles:
 
-## Run Locally
+- registration, login and study-group assignment
+- the interview experience and session gating
+- biography, relationship graph and mental-model review
+- simulator launch and handoff back to reflection/replay
+- privacy-bounded admin access for local operation and review
+
+In other words, this app is the control surface for the whole autobiographical
+reconstruction loop: collect evidence, inspect it, revise it, then test it in a
+shared decision environment.
+
+## Project shape
+
+A quick mental model for the front-end:
+
+- `src/App.tsx` is the route shell and auth gate.
+- `src/components/Home.tsx` is the main participant dashboard and decision
+  cockpit.
+- `src/components/chat/` contains the interview and message flows.
+- `src/components/biography/` contains the editable biography experience.
+- `src/stores/authStore.ts` holds the authenticated session state.
+- `src/utils/` holds API helpers, local evidence persistence and language/config
+  helpers.
+
+This keeps the product flow readable without needing to understand the entire
+research backend just to navigate the UI.
+
+## Run locally
 
 ```bash
 npm install

@@ -211,6 +211,30 @@ Research framework, not a screenshot or a claim of validated prediction accuracy
 
 </details>
 
+## Repository map
+
+If you are new to the codebase, use this as the reading order:
+
+| Path | Responsibility | Good starting point |
+| :--- | :--- | :--- |
+| `StorySage/` | Interview backend, biography generation, graph and mental-model pipeline, storage and admin APIs | [Backend README](StorySage/readme.md) |
+| `StorySage_Frontend/` | Participant cockpit, login/registration, interview flow, biography editing and dashboard | [Frontend README](StorySage_Frontend/README.md) |
+| `Rewind-reigns/` | Campus simulation, scenario deck, run report and reflection/replay UI | [Simulation README](Rewind-reigns/README.md) |
+| `rewindai-mirofish-backend/` | Optional graph compatibility service for external graph/report integration | [Graph service README](rewindai-mirofish-backend/README.md) |
+| `docs/` + `deploy/` | Release notes, deployment notes and operational boundaries | [Docs index](docs/README.md) |
+
+In practice, the typical workflow is:
+
+1. A participant creates an account in the web cockpit.
+2. The backend collects interview evidence in `StorySage`.
+3. Biography, graph and mental-model outputs are surfaced back in the frontend.
+4. The simulator runs a decision scenario and records traces.
+5. Reflection and replay compare the first and second run in the same study flow.
+
+This keeps the product architecture clear: the frontend is a UI shell, the
+backend owns the reasoning and evidence pipeline, and the simulator is the
+decision environment that produces comparable traces.
+
 ## Verification & limitations
 
 Checks recorded on **2026-10-20**. [All three CI jobs passed](https://github.com/yuzhang-zhong/RewindAI-release/actions/runs/39393270281). No real provider credentials, paid model calls,
