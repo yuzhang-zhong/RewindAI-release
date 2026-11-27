@@ -7,6 +7,8 @@
 <a id="inspectable-and-revisable-autobiographical-clonesfor-reflective-social-decisions"></a>
 **Inspectable and Revisable Autobiographical Clones for Reflective Social Decisions**
 
+可检查、可修订的个人经历访谈 AI 数字分身（个人传记 · 关系图谱 · 心智模型）与校园情境社交决策反思模拟系统
+
 **Accepted to the UIST 2026 Poster Track**  
 Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
@@ -23,11 +25,11 @@ Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 ## What is RewindAI?
 
-RewindAI is a research prototype for reflecting on social decisions through an
+RewindAI is an open-source HCI research prototype for reflecting on social decisions through an
 inspectable AI representation (an autobiographical digital twin / personal-memory
-persona) of one's own experiences. A natural-language interview becomes an
-editable biography, a relationship/decision knowledge graph, and a plain-language
-mental model. A Reigns-style campus decision simulation then makes those ideas
+clone) of one's own life experiences. A natural-language interview becomes an
+editable personal biography, a relationship graph and decision graph, and a plain-language
+mental model. An interactive campus social simulation (decision simulation) then makes those ideas
 concrete: make choices, inspect a decision trace, reflect, and try another run.
 
 The clone is a **revisable hypothesis**, not an authoritative judgment about a
@@ -324,7 +326,7 @@ banner/list overlap remains noted in the release notes.
 
 ## 中文简介
 
-RewindAI（UIST 2026 Poster）是一个支持**社交决策反思**的个人经历 AI 表征与数字分身研究原型。系统将自然语言自传访谈转化为**可检查、可编辑的个人传记、人际关系与决策图谱、以及自然语言心智模型**，并结合类《王权》（Reigns）校园情景模拟卡组，让用户在做出选择后对比行为轨迹、对照克隆体假设进行自我反思与重玩。支持无需模型 API Key 独立运行本地模拟器（`Rewind-reigns`），或运行包含 `StorySage` 访谈后端与 Web 工作台的完整本地栈。详见[简体中文完整说明](README.zh-CN.md)。
+RewindAI（UIST 2026 Poster）是一个支持**社交决策反思**的个人经历 AI 表征与数字分身开源研究项目。系统通过自然语言访谈将个人经历转化为**可检查、可修改的个人传记、关系图谱、决策图谱与自然语言心智模型**，并结合类《王权》（Reigns）校园情境模拟（社交模拟卡组），让用户在做出选择后对比行为轨迹、对照克隆体假设进行自我反思与重玩。支持无需模型 API Key 独立运行本地模拟器（`Rewind-reigns`），或运行包含 `StorySage` 访谈后端与 Web 工作台的完整本地栈。详见[简体中文完整说明](README.zh-CN.md)。
 
 ## Acknowledgments & provenance
 
