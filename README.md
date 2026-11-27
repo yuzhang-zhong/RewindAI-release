@@ -326,6 +326,12 @@ banner/list overlap remains noted in the release notes.
 | [Deployment notes](deploy/README.md) | Placeholder hosting templates; real origins, secrets and storage configuration are still required |
 | [Attribution and rights](NOTICE.md) | Source provenance, upstream credits and the absence of a repository-level license grant |
 
+## Frequently asked
+
+- **How does RewindAI differ from generic AI persona or roleplay chatbots?** Instead of treating an LLM prompt as a hidden black-box personality, RewindAI turns a life-story interview into an inspectable, user-editable biography, relationship graph, and plain-language mental model before testing choices in a shared campus simulation.
+- **Can I try it without an OpenAI API key or Python backend?** Yes. The standalone Reigns-style campus decision simulator (`Rewind-reigns/`) runs locally on Node.js 22.12+ with preset scenario cards and no model API key.
+- **Is the AI clone meant to diagnose personality or predict behavior?** No. The clone is explicitly framed as a revisable reflection aid, and similarity metrics only summarize in-game choices across runs.
+
 ## 中文简介
 
 RewindAI（UIST 2026 Poster）是一个支持**社交决策反思**的个人经历 AI 表征与数字分身开源研究项目。系统通过自然语言访谈将个人经历转化为**可检查、可修改的个人传记、关系图谱、决策图谱与自然语言心智模型**，并结合类《王权》（Reigns）校园情境模拟（社交模拟卡组），让用户在做出选择后对比行为轨迹、对照克隆体假设进行自我反思与重玩。支持无需模型 API Key 独立运行本地模拟器（`Rewind-reigns`），或运行包含 `StorySage` 访谈后端与 Web 工作台的完整本地栈。详见[简体中文完整说明](README.zh-CN.md)。

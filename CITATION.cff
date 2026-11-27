@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use or reference this project, please cite it using the metadata below."
+type: software
+title: "RewindAI: Inspectable and Revisable Autobiographical Clones for Reflective Social Decisions"
+authors:
+  - family-names: "Zhong"
+    given-names: "Yuzhang"
+  - family-names: "Kim"
+    given-names: "Min"
+  - family-names: "Lu"
+    given-names: "Rangjiacheng"
+repository-code: "https://github.com/yuzhang-zhong/RewindAI-release"
+url: "https://yuzhang-zhong.github.io/portfolio/rewindai"
+abstract: "Open-source HCI research prototype (UIST 2026 Poster) that conducts a natural-language life-story interview to construct an inspectable, editable personal biography, relationship/decision graph, and mental-model digital twin, paired with a Reigns-style college/campus social choice simulation for reflective decision-making."
+keywords:
+  - "human-ai-interaction"
+  - "digital-twin"
+  - "autobiographical-memory"
+  - "self-reflection"
+  - "social-simulation"
+  - "personal-biography"
+  - "decision-making"
+  - "uist-2026"
+  - "reigns-like"
+  - "persona-agent"
