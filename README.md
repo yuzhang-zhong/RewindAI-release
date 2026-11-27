@@ -18,6 +18,8 @@ Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 </div>
 
+> **Quick answer / 一句话速览：** RewindAI is an open-source HCI research app that interviews you about your past life stories to create an editable personal biography, relationship graph, and AI digital twin, then lets you play a college / campus social choice game to reflect on how you make decisions. / 一个先通过聊天采访人生经历、生成可编辑个人传记和 AI 数字分身，再玩大学校园社交选择模拟游戏来复盘自己性格与决策的开源研究项目。
+
 <a id="inside-the-simulator"></a>
 ![Actual campus-simulation run report showing synthetic choices, outcomes and resource changes](images/simulation-run-report.png)
 
