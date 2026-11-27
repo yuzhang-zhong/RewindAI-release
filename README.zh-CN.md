@@ -16,6 +16,8 @@ Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 </div>
 
+> **一句话速览：** 不同于无法查看内部记忆的黑盒角色扮演机器人（如 Character.AI），RewindAI 通过人生访谈生成你可手动检查与修改的**个人传记、关系图谱、决策图谱与 AI 数字分身**，并在类《王权》（Reigns）左右划卡大学校园社交选择游戏中对比复盘人生决策（预设卡组无需模型 API Key 即可本地运行）。
+
 <a id="inside-the-simulator"></a>
 ![校园模拟的实际运行报告，展示合成测试中的选择、结果和资源变化](images/simulation-run-report.png)
 

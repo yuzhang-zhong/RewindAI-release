@@ -32,3 +32,7 @@ npm ci && npm run dev
 - [README (简体中文)](README.zh-CN.md)
 - [Release & Verification Notes](docs/RELEASE_NOTES.md)
 - [Attribution & Rights](NOTICE.md)
+
+## Multi-Angle Search & Slang Mapping
+- **Pain-Point / Symptom**: Black-box AI clones you cannot inspect or edit; generic chatbot advice ignoring personal life history; 黑盒AI分身无法修改记忆、想在平行宇宙复盘大学选课社团人际取舍。
+- **Alternative-To**: Inspectable, editable personal-memory alternative to black-box Character.AI personas; Reigns-style (`《王权》式`) social decision card simulator.

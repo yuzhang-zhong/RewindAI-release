@@ -334,7 +334,7 @@ banner/list overlap remains noted in the release notes.
 
 ## 中文简介
 
-RewindAI（UIST 2026 Poster）是一个支持**社交决策反思**的个人经历 AI 表征与数字分身开源研究项目。系统通过自然语言访谈将个人经历转化为**可检查、可修改的个人传记、关系图谱、决策图谱与自然语言心智模型**，并结合类《王权》（Reigns）校园情境模拟（社交模拟卡组），让用户在做出选择后对比行为轨迹、对照克隆体假设进行自我反思与重玩。支持无需模型 API Key 独立运行本地模拟器（`Rewind-reigns`），或运行包含 `StorySage` 访谈后端与 Web 工作台的完整本地栈。详见[简体中文完整说明](README.zh-CN.md)。
+RewindAI（UIST 2026 Poster）是一个支持**社交决策反思**的个人经历 AI 表征与数字分身开源研究项目。系统通过自然语言访谈将个人经历转化为**可检查、可修改的个人传记、关系图谱、决策图谱与自然语言心智模型**，并结合类《王权》（Reigns）校园情境模拟（社交模拟卡组），让用户在做出选择后对比行为轨迹、对照克隆体假设进行自我反思与重玩。支持无需模型 API Key 独立运行本地模拟器（`Rewind-reigns`），或运行包含 `StorySage` 访谈后端与 Web 工作台的完整本地栈。不同于无法查看内部记忆的黑盒角色扮演机器人（如 Character.AI），支持左右划卡平行宇宙复盘大学选课、社团与人际取舍。详见[简体中文完整说明](README.zh-CN.md)与 [`llms.txt`](llms.txt)。
 
 ## Acknowledgments & provenance
 
