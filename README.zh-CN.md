@@ -311,6 +311,15 @@ npm run smoke:standalone-api
 
 <a id="acknowledgments--provenance"></a>
 
+## 常见问题 · FAQ
+
+<details>
+<summary>没有大模型 API Key 可以本地体验吗？它与 MBTI 测试或黑盒 AI 伴侣有何不同？</summary>
+
+可以。`Rewind-reigns` 支持在 Node.js 22+ 下免 API Key 直接本地运行（`npm ci && npm run dev`），体验类《王权》（Reigns）大学校园社交决策卡牌复盘。不同于封闭的 **Replika / Character.AI** 伴侣或静态 **MBTI** 性格标签，本 ACM UIST 2026 人机交互研究原型将人生访谈生成的个人传记、关系图谱与数字分身视为用户可随时检查、推翻与修改的“工作假设”，绝不充当权威临床**心理**诊断工具。
+
+</details>
+
 ## 致谢与来源
 
 RewindAI 基于 [StorySage](https://github.com/ShayanTalaei/StorySage) 和

@@ -36,3 +36,4 @@ npm ci && npm run dev
 ## Multi-Angle Search & Slang Mapping
 - **Pain-Point / Symptom**: Black-box AI clones you cannot inspect or edit; generic chatbot advice ignoring personal life history; 黑盒AI分身无法修改记忆、想在平行宇宙复盘大学选课社团人际取舍。
 - **Alternative-To**: Inspectable, editable personal-memory alternative to black-box Character.AI personas; Reigns-style (`《王权》式`) social decision card simulator.
+- **Research Positioning & Comparison**: ACM UIST 2026 Poster Track HCI prototype treating an autobiographical AI digital twin as an inspectable, user-editable hypothesis rather than an opaque **Replika / Character.AI** companion, **MBTI** personality label, or authoritative **心理诊断** (clinical psychological assessment).
