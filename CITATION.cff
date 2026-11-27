@@ -11,7 +11,7 @@ authors:
     given-names: "Rangjiacheng"
 repository-code: "https://github.com/yuzhang-zhong/RewindAI-release"
 url: "https://yuzhang-zhong.github.io/portfolio/rewindai"
-abstract: "Open-source HCI research prototype (UIST 2026 Poster) that conducts a natural-language life-story interview to construct an inspectable, editable personal biography, relationship/decision graph, and mental-model digital twin, paired with a Reigns-style college/campus social choice simulation for reflective decision-making."
+abstract: "Public source snapshot of an HCI research prototype (UIST 2026 Poster) that conducts a natural-language life-story interview to construct an inspectable, editable personal biography, relationship/decision graph, and mental-model digital twin, paired with a Reigns-style college/campus social choice simulation for reflective decision-making. See NOTICE.md for reuse terms."
 keywords:
   - "human-ai-interaction"
   - "digital-twin"

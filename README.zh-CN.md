@@ -12,11 +12,13 @@ Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 [![构建与回归检查](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml/badge.svg)](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml)
 
-[项目概览](https://yuzhang-zhong.github.io/portfolio/rewindai) · [论文](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [快速开始](#quick-start) · [体验流程](#explore-the-experience) · [文档](#documentation)
+**[本地试玩校园卡组](#quick-start)** · [项目概览](https://yuzhang-zhong.github.io/portfolio/rewindai) · [论文](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [文档](#documentation)
 
 </div>
 
-> **一句话速览：** 不同于无法查看内部记忆的黑盒角色扮演机器人（如 Character.AI），RewindAI 通过人生访谈生成你可手动检查与修改的**个人传记、关系图谱、决策图谱与 AI 数字分身**，并在类《王权》（Reigns）左右划卡大学校园社交选择游戏中对比复盘人生决策（预设卡组无需模型 API Key 即可本地运行）。
+RewindAI 是一个人机交互研究原型。它通过人生访谈生成可编辑的个人传记、关系图谱、心智模型和 AI 数字分身，帮助你在类《王权》的校园模拟中回顾自己的选择。
+
+你可以先玩一轮预设卡组，在运行报告里查看决策轨迹。本地试玩需要 Node.js 22.12+ 和 npm，无需模型密钥。本仓库是公开的研究源码快照，[未授予仓库级统一许可](NOTICE.md)。
 
 <a id="inside-the-simulator"></a>
 ![校园模拟的实际运行报告，展示合成测试中的选择、结果和资源变化](images/simulation-run-report.png)
@@ -98,7 +100,7 @@ cd RewindAI-release
 
 ### 1. 无需模型密钥，体验校园模拟
 
-需要 **Node.js 22.12+** 和 npm。在仓库根目录执行：
+需要 **Node.js 22.12+** 和 npm。先[获取源码](#get-the-source)，再在仓库根目录执行：
 
 ```bash
 cd Rewind-reigns
@@ -106,9 +108,8 @@ npm ci
 npm run dev
 ```
 
-打开 **<http://127.0.0.1:5174>**。点击 **Anonymous start** 会进入共用卡组和自我反思流程；
-**Start semester** 还会提供基于本地启发式规则的克隆体对比。
-这两条独立运行路径都不使用由访谈支撑的 AI 人格。
+打开 **<http://127.0.0.1:5174>**，点击 **Anonymous start**，完成一轮预设卡组后打开运行报告查看决策轨迹。
+**Start semester** 还会提供基于本地启发式规则的克隆体对比。这两条独立运行路径都不使用由访谈支撑的 AI 人格。
 
 独立运行的记录保存在当前浏览器的 localStorage 中。**Anonymous start**
 会跳过账户登录，但**不等于**研究流程交接时的匿名、不留存数据模式。

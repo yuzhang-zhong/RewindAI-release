@@ -14,11 +14,13 @@ Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 [![Build and regression checks](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml/badge.svg)](https://github.com/yuzhang-zhong/RewindAI-release/actions/workflows/verify-release.yml)
 
-[Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Quick start](#quick-start) · [Experience](#explore-the-experience) · [Documentation](#documentation)
+**[Try the campus deck locally](#quick-start)** · [Project overview](https://yuzhang-zhong.github.io/portfolio/rewindai) · [Publication](https://yuzhang-zhong.github.io/publication/2026-rewindai) · [Documentation](#documentation)
 
 </div>
 
-> **Quick answer / 一句话速览：** RewindAI is an open-source HCI research app that interviews you about your past life stories to create an editable personal biography, relationship graph, personal mental model, and AI digital twin, then lets you play a Reigns-like college / campus social choice game to reflect on how you make decisions. / 一个先通过人生访谈（聊天采访人生经历）生成可改传记（可手动修改的个人传记）、关系图谱与 AI分身（AI 数字分身），再在赛博平行宇宙玩类似《王权》的大学校园模拟（校园社交选择模拟游戏）来复盘自己性格与决策的开源研究项目。
+RewindAI is an HCI research prototype. It turns a life-story interview into an editable biography, relationship graph, mental model, and AI digital twin for reflecting on choices in a Reigns-style campus simulation.
+
+With the preset deck, you can make campus choices and review the decision trail in a run report. Local play needs Node.js 22.12+ and npm, with no model key. This public research source snapshot has [no repository-wide license grant](NOTICE.md).
 
 <a id="inside-the-simulator"></a>
 ![Actual campus-simulation run report showing synthetic choices, outcomes and resource changes](images/simulation-run-report.png)
@@ -27,9 +29,8 @@ Yuzhang Zhong · Min Kim · Rangjiacheng Lu
 
 ## What is RewindAI?
 
-RewindAI is an open-source HCI research prototype for reflecting on social decisions through an
-inspectable AI representation (an autobiographical digital twin / personal-memory
-clone) of one's own life experiences. A natural-language interview becomes an
+RewindAI uses an inspectable AI representation of one's own life experiences
+(an autobiographical digital twin or personal-memory clone). A natural-language interview becomes an
 editable personal biography, a relationship graph and decision graph, and a plain-language
 mental model. An interactive campus social simulation (decision simulation) then makes those ideas
 concrete: make choices, inspect a decision trace, reflect, and try another run.
@@ -96,7 +97,7 @@ the standalone path does not require setting up the backend or web cockpit.
 
 ### 1. Try the campus simulation without a model key
 
-Requires **Node.js 22.12+** and npm. From the repository root:
+Requires **Node.js 22.12+** and npm. [Get the source](#get-the-source) first, then run this from the repository root:
 
 ```bash
 cd Rewind-reigns
@@ -104,9 +105,10 @@ npm ci
 npm run dev
 ```
 
-Open **http://127.0.0.1:5174**. **Anonymous start** opens the shared deck with
-self-reflection; **Start semester** also exposes a local heuristic clone
-comparison. Neither standalone path is an interview-grounded AI persona.
+Open **<http://127.0.0.1:5174>**. Choose **Anonymous start**, play through the preset
+campus deck, and open the run report to see your decision trail. **Start semester**
+also exposes a local heuristic clone comparison. Neither standalone path uses an
+interview-grounded AI persona.
 
 Standalone records are saved in this browser's localStorage. “Anonymous start”
 skips account login but is **not** the study handoff's anonymous no-retention mode.
@@ -334,7 +336,7 @@ banner/list overlap remains noted in the release notes.
 
 ## 中文简介
 
-RewindAI（UIST 2026 Poster）是一个支持**社交决策反思**的个人经历 AI 表征与数字分身开源研究项目。系统通过自然语言访谈将个人经历转化为**可检查、可修改的个人传记、关系图谱、决策图谱与自然语言心智模型**，并结合类《王权》（Reigns）校园情境模拟（社交模拟卡组），让用户在做出选择后对比行为轨迹、对照克隆体假设进行自我反思与重玩。支持无需模型 API Key 独立运行本地模拟器（`Rewind-reigns`），或运行包含 `StorySage` 访谈后端与 Web 工作台的完整本地栈。不同于无法查看内部记忆的黑盒角色扮演机器人（如 Character.AI），支持左右划卡平行宇宙复盘大学选课、社团与人际取舍。详见[简体中文完整说明](README.zh-CN.md)与 [`llms.txt`](llms.txt)。
+RewindAI（UIST 2026 Poster）通过人生访谈生成可修改的传记、关系图谱和心智模型。你可以在类《王权》的校园卡牌模拟中复盘选课、社团和人际取舍。预设卡组无需模型密钥，访谈和分身功能需要完整本地系统。详见[简体中文说明](README.zh-CN.md)。
 
 ## Acknowledgments & provenance
 
